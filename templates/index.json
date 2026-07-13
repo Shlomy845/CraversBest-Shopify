@@ -1,0 +1,288 @@
+{
+  "sections": {
+    "hero": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Snacks worth craving.",
+            "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Bold, small-batch flavors delivered to your door. All crunch, zero regrets.",
+            "text_style": "body"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop best sellers",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "Build a bundle",
+            "button_link_2": "shopify://collections/bundles",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": ["heading", "text", "buttons"],
+      "settings": {
+        "image_overlay_opacity": 20,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "image_behavior": "ambient",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "value_props": {
+      "type": "multicolumn",
+      "blocks": {
+        "col1": {
+          "type": "column",
+          "settings": {
+            "title": "Big, bold flavor",
+            "text": "<p>Crave-worthy taste in every bite. No boring snacks allowed.</p>"
+          }
+        },
+        "col2": {
+          "type": "column",
+          "settings": {
+            "title": "Small-batch fresh",
+            "text": "<p>Made in small batches so every bag hits at peak crunch.</p>"
+          }
+        },
+        "col3": {
+          "type": "column",
+          "settings": {
+            "title": "Free shipping $35+",
+            "text": "<p>Fast, free shipping on every order over $35.</p>"
+          }
+        },
+        "col4": {
+          "type": "column",
+          "settings": {
+            "title": "Snacker guarantee",
+            "text": "<p>Love it or your money back. Simple as that.</p>"
+          }
+        }
+      },
+      "block_order": ["col1", "col2", "col3", "col4"],
+      "settings": {
+        "title": "Why CraversBest",
+        "heading_size": "h2",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 48,
+        "padding_bottom": 40
+      }
+    },
+    "shop_by_craving": {
+      "type": "collection-list",
+      "blocks": {
+        "c1": { "type": "featured_collection", "settings": {} },
+        "c2": { "type": "featured_collection", "settings": {} },
+        "c3": { "type": "featured_collection", "settings": {} }
+      },
+      "block_order": ["c1", "c2", "c3"],
+      "settings": {
+        "title": "Shop by craving",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "best_sellers": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Best sellers",
+        "heading_size": "h1",
+        "description": "<p>The snacks our CraversClub can't stop reordering.</p>",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-2",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "brand_story": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Born from a midnight craving",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We were tired of choosing between snacks that taste amazing and snacks we could feel good about. So we made our own — loud on flavor, honest on ingredients, and impossible to put down.</p>",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Our story",
+            "button_link": "shopify://pages/about",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": ["heading", "text", "button"],
+      "settings": {
+        "height": "large",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "mission": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Snacking, upgraded.",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Real ingredients. Bold flavor. Made in small batches and shipped fresh so every bite is worth the crave.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop all snacks",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": ["heading", "text", "button"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "bundles": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Build your own bundle",
+        "heading_size": "h1",
+        "description": "<p>Mix, match, and save. Your perfect snack drawer starts here.</p>",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "bundles",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Get 10% off your first crave",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Join the CraversClub for early drops, snack deals, and 10% off your first order.</p>"
+          }
+        },
+        "email": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": ["heading", "paragraph", "email"],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "value_props",
+    "shop_by_craving",
+    "best_sellers",
+    "brand_story",
+    "mission",
+    "bundles",
+    "newsletter"
+  ]
+}
