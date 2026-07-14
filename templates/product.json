@@ -10,70 +10,85 @@
             "text_style": "uppercase"
           }
         },
-        "title": {
-          "type": "title"
-        },
-        "price": {
-          "type": "price"
+        "title": { "type": "title" },
+        "price": { "type": "price" },
+        "trust": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "truck",
+            "heading_1": "Free shipping over $35",
+            "icon_2": "leaf",
+            "heading_2": "Clean, simple ingredients",
+            "icon_3": "return",
+            "heading_3": "30-day snacker guarantee"
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle"
+            "swatch_shape": "none"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector"
-        },
+        "quantity_selector": { "type": "quantity_selector" },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": false
           }
         },
-        "description": {
-          "type": "description"
+        "description": { "type": "description" },
+        "shipping_tab": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping & Returns",
+            "icon": "truck",
+            "content": "",
+            "page": "shipping-returns"
+          }
+        },
+        "guarantee_tab": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "The Snacker Guarantee",
+            "icon": "heart",
+            "content": "<p>If you don't love it, we'll make it right — no drama, no fine print. Contact us within 30 days for a refund or replacement.</p>"
+          }
         },
         "share": {
           "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
+          "settings": { "share_label": "Share" }
         }
       },
       "block_order": [
         "vendor",
         "title",
         "price",
+        "trust",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "description",
+        "shipping_tab",
+        "guarantee_tab",
         "share"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_position": "left",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "image_zoom": "lightbox",
-        "mobile_thumbnails": "hide",
+        "mobile_thumbnails": "columns",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "disclosures": {
-      "type": "disclosures",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
       }
     },
     "related-products": {
@@ -81,23 +96,19 @@
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
-        "products_to_show": 4,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
-        "show_vendor": false,
+        "show_vendor": true,
         "show_rating": false,
         "columns_mobile": "2",
         "padding_top": 36,
-        "padding_bottom": 28
+        "padding_bottom": 40
       }
     }
   },
-  "order": [
-    "main",
-    "disclosures",
-    "related-products"
-  ]
+  "order": ["main", "related-products"]
 }
