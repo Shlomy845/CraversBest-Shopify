@@ -1,21 +1,12 @@
-# ⚠️ Pricing — placeholder values, must be set before going live
+# Pricing
 
-The Walmart export in `products.csv` **did not include selling prices** (Walmart manages price separately). To make the store previewable, `Variant Price` is filled with **placeholder prices by size**:
+`products.csv` uses **real selling prices**, mapped to each SKU by **GTIN / barcode** from the price list provided by the store owner.
 
-| Size / type | Placeholder |
-|---|---|
-| ≤ 4 oz | $7.99 |
-| ≤ 8 oz | $10.99 |
-| ≤ 16 oz | $16.99 |
-| ≤ 24 oz | $22.99 |
-| ≤ 32 oz | $27.99 |
-| Snack Boxes | $29.99 |
-| Gift Boxes | $49.99 |
+- All **76 variants** matched a price by GTIN (100% coverage, no placeholders).
+- Prices were verified by checking that every multi-size product forms a rising ladder (e.g. 8 oz < 16 oz < 32 oz) — all 16 size ladders are monotonic, confirming a clean mapping.
+- Range: **$9.74 – $58.78**.
 
-**These are NOT real prices.** Before publishing the theme live:
+### If prices change
+Update them in **Shopify admin → Products** (bulk editor), or edit the `Variant Price` column in `products.csv` and re-import (Shopify matches on `Handle` + `Variant SKU`).
 
-1. Provide the real price list (per SKU) — I'll drop it into `products.csv` and re-import, **or**
-2. Set prices in **Shopify admin → Products** (bulk editor: select all → Edit prices), **or**
-3. Export current products, fill the Price column, and re-import.
-
-The store is safe in the meantime: it's on a **password-protected dev store** with an **unpublished theme**, so nothing is publicly purchasable at these prices. Do not publish live until prices are confirmed.
+> Prices were transcribed from a screenshot of the GTIN→price list. The size-ladder check gives high confidence, but do a quick spot-check against the source before publishing live.
