@@ -1,0 +1,60 @@
+/*
+  CraversBest — Amazon-style product gallery.
+  On desktop (>=990px) with the "thumbnail" gallery layout, place the thumbnail
+  strip as a vertical column to the LEFT of the large main image.
+  Mobile keeps Dawn's native swipe slider.
+*/
+@media screen and (min-width: 990px) {
+  .product--thumbnail media-gallery {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  /* Main image viewer takes the remaining width */
+  .product--thumbnail media-gallery > slider-component:not(.thumbnail-slider) {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    margin: 0;
+  }
+
+  /* Thumbnail rail: fixed-width vertical column */
+  .product--thumbnail media-gallery > .thumbnail-slider {
+    flex: 0 0 9rem;
+    width: 9rem;
+    max-width: 9rem;
+    margin: 0;
+    padding: 0;
+  }
+  .product--thumbnail .thumbnail-slider .thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    max-height: 56rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: none;
+    padding: 0.2rem;
+  }
+  .product--thumbnail .thumbnail-slider .thumbnail-list__item {
+    width: 100% !important;
+    max-width: 100% !important;
+    scroll-snap-align: none;
+  }
+  /* Horizontal slider arrows aren't needed for a vertical rail */
+  .product--thumbnail .thumbnail-slider > .slider-button {
+    display: none !important;
+  }
+
+  /* Slim scrollbar for the rail */
+  .product--thumbnail .thumbnail-slider .thumbnail-list::-webkit-scrollbar {
+    width: 4px;
+  }
+  .product--thumbnail .thumbnail-slider .thumbnail-list::-webkit-scrollbar-thumb {
+    background: rgba(35, 26, 21, 0.25);
+    border-radius: 4px;
+  }
+}
