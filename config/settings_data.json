@@ -1,6 +1,7 @@
 {
   "current": {
-    "logo_width": 110,
+    "logo": "shopify://shop_images/cravers-best-logo.png",
+    "logo_width": 100,
     "color_schemes": {
       "scheme-1": {
         "settings": {
