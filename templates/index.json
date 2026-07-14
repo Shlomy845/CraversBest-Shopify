@@ -28,13 +28,14 @@
       },
       "block_order": ["heading", "text", "buttons"],
       "settings": {
-        "image_overlay_opacity": 20,
+        "image": "shopify://shop_images/hero.png",
+        "image_overlay_opacity": 0,
         "image_height": "large",
-        "desktop_content_position": "middle-center",
+        "desktop_content_position": "middle-left",
         "show_text_box": true,
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "color_scheme": "scheme-4",
-        "image_behavior": "ambient",
+        "image_behavior": "none",
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
         "show_text_below": false
@@ -146,6 +147,7 @@
       },
       "block_order": ["heading", "text", "button"],
       "settings": {
+        "image": "shopify://shop_images/brand-story.png",
         "height": "large",
         "desktop_image_width": "medium",
         "layout": "image_first",
