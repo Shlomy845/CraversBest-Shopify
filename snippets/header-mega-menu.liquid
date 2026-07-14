@@ -1,6 +1,10 @@
 {% comment %}
   Renders a megamenu for the header.
 
+  CraversBest: level-2 items that link to a collection render as image tiles
+  (Nuts.com style). The tile image uses the collection image, falling back to
+  the collection's first product image.
+
   Usage:
   {% render 'header-mega-menu' %}
 {% endcomment %}
@@ -31,20 +35,39 @@
                 tabindex="-1"
               >
                 <ul
-                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                  class="mega-menu__list mega-menu__list--tiles page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
                   role="list"
                 >
                   {%- for childlink in link.links -%}
+                    {%- liquid
+                      assign mm_image = blank
+                      if childlink.type == 'collection_link' and childlink.object != blank
+                        assign mm_image = childlink.object.image | default: childlink.object.products.first.featured_image
+                      endif
+                    -%}
                     <li>
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
                         href="{{ childlink.url }}"
-                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                        class="mega-menu__link mega-menu__link--level-2 link{% if mm_image != blank %} cb-mega-tile{% endif %}{% if childlink.current %} mega-menu__link--active{% endif %}"
                         {% if childlink.current %}
                           aria-current="page"
                         {% endif %}
                       >
-                        {{ childlink.title | escape }}
+                        {%- if mm_image != blank -%}
+                          <span class="cb-mega-tile__img global-media-settings global-media-settings--no-shadow">
+                            {{
+                              mm_image
+                              | image_url: width: 260
+                              | image_tag:
+                                loading: 'lazy',
+                                widths: '130, 195, 260',
+                                class: 'cb-mega-tile__image',
+                                alt: childlink.title | escape
+                            }}
+                          </span>
+                        {%- endif -%}
+                        <span class="cb-mega-tile__title">{{ childlink.title | escape }}</span>
                       </a>
                       {%- if childlink.links != blank -%}
                         <ul class="list-unstyled" role="list">
@@ -92,3 +115,57 @@
     {%- endfor -%}
   </ul>
 </nav>
+
+{% stylesheet %}
+  .mega-menu__content .mega-menu__list--tiles {
+    display: flex;
+    flex-wrap: wrap;
+    column-count: initial;
+    gap: 2.4rem 3.2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    align-items: flex-start;
+  }
+  .cb-mega-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 13rem;
+    gap: 1rem;
+    padding: 0;
+    text-decoration: none;
+  }
+  .cb-mega-tile__img {
+    display: block;
+    width: 13rem;
+    height: 13rem;
+    border-radius: 1.4rem;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.04);
+  }
+  .cb-mega-tile__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+  .cb-mega-tile:hover .cb-mega-tile__image,
+  .cb-mega-tile:focus-visible .cb-mega-tile__image {
+    transform: scale(1.06);
+  }
+  .cb-mega-tile__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  @media screen and (max-width: 1200px) {
+    .cb-mega-tile,
+    .cb-mega-tile__img {
+      width: 11rem;
+    }
+    .cb-mega-tile__img {
+      height: 11rem;
+    }
+  }
+{% endstylesheet %}
